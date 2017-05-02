@@ -1,0 +1,275 @@
+﻿
+@{
+    ViewBag.Title = "إنهاء طلبية";
+    ViewBag.Breadcrumb = new Breadcrumb(new Crumb[] {
+        new Crumb("الطلبيات", Url.Content("~/Requests"), ""),
+        new Crumb("طلبية رقم 2435", Url.Content("~/Requests"), ""),
+
+        new Crumb("إنهاء طلبية", "", "")
+    });
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- TABLE: LATEST ORDERS -->
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">إنهاء طلبية رقم 2365 (حليب منكه فريز 200 مل)</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <form class="form-horizontal">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-5">تاريخ أمر التشغيل</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control datepicker" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-5">إنهاء التشغيل/تتراباك</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control datepicker" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-5">زمن بداية التشغيل</label>
+                            <div class="col-md-6 bootstrap-timepicker">
+                                <input type="text" class="form-control timepicker" value="" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-5">زمن نهاية التشغيل</label>
+                            <div class="col-md-6 bootstrap-timepicker">
+                                <input type="text" class="form-control timepicker" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-5">الزمن الكلي للإنتاج (ساعة)</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-5">زمن التوقفات (ساعة)</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-5">الزمن الفعلي للإنتاج (ساعة)</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" value="" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-5">زمن نهاية التشغيل</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-seperator"></div>
+
+                </form>
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix">
+
+            </div><!-- /.box-footer -->
+        </div><!-- /.box -->
+
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">مدخلات الإنتاج</h3>
+                <div class="pull-left">
+                    <a data-toggle="modal" data-target="#add-item-modal" title="إضافة مدخل جديد" class="btn btn-info btn-flat btn-sm">إضافة مدخل جديد&nbsp;<i class="fa fa-plus-circle"></i></a>
+                </div>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>رمز المادة</th>
+                            <th>المادة</th>
+                            <th>الكمية المعيارية للعبوة</th>
+                            <th>نسبة الكمية المعيارية للمنتج</th>
+                            <th>الكمية الواجب استخدامها</th>
+                            <th>الكمية المستخدمة (كغ)</th>
+                            <th>النسبة من إجمالي الخلطة</th>
+                            <th>انحراف RCP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>108002</td>
+                            <td>سكر أبيض</td>
+                            <td>0.022</td>
+                            <td>10.00%</td>
+                            <td>1959.250</td>
+                            <td>
+                                <input class="form-control" type="text" name="name" value="" />
+                            </td>
+                            <td>-</td>
+                            <td>59.250</td>
+                        </tr>
+                        <tr>
+                            <td>108002</td>
+                            <td>سكر أبيض</td>
+                            <td>0.022</td>
+                            <td>10.00%</td>
+                            <td>1959.250</td>
+                            <td>
+                                <input class="form-control" type="text" name="name" value="" />
+                            </td>
+                            <td>-</td>
+                            <td>59.250</td>
+                        </tr>
+                        <tr>
+                            <td>108002</td>
+                            <td>سكر أبيض</td>
+                            <td>0.022</td>
+                            <td>10.00%</td>
+                            <td>1959.250</td>
+                            <td>
+                                <input class="form-control" type="text" name="name" value="" />
+                            </td>
+                            <td>-</td>
+                            <td>59.250</td>
+                        </tr>
+
+                    </tbody>
+                    <tfoot style="background: rgba(34, 45, 50, 0.15);">
+                        <tr>
+                            <td colspan="2">إجمالي الخلطة</td>
+                            <td>0.22</td>
+                            <td>100.00%</td>
+                            <td>19.592.60</td>
+                            <td>19592.60</td>
+                            <td>100.00%</td>
+                            <td>0.000</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">مخرجات الإنتاج</h3>
+            </div>
+            <div class="box-body form-horizontal">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="col-md-5">الإنتاج بالعبوة</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-5">عينات مخبرية</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="col-md-5">عبوات نخب</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-5">درين</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-4">
+                    <button type="submit" class="btn btn-success btn-block" name="name">إنهاء الطلبية</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div><!-- /.col -->
+</div><!-- /.row -->
+
+<div class="modal fade modal-primary" role="dialog" id="add-item-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">رسالة تأكيد</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-3">نوع المادة</label>
+                        <div class="col-md-8">
+                            <select class="select2 form-control">
+                                <option value="">درين</option>
+                                <option value="">نخب</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3">اختر الطلبية</label>
+                        <div class="col-md-8">
+                            <select class="select2 form-control">
+                                <option value="">254</option>
+                                <option value="">365</option>
+                                <option value="">256</option>
+                                <option value="">415</option>
+                                <option value="">854</option>
+                                <option value="">754</option>
+                                <option value="">965</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3">أدخل الكمية</label>
+                        <div class="col-md-3">
+                            <input type="text" name="" class="form-control col-md-10" value="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" data-dismiss="modal">إغلاق</button>
+                <button type="button" class="btn btn-success btn-outline">إضافة</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+@section scripts {
+    <script src="~/Scripts/select2.min.js"></script>
+    <!-- bootstrap datepicker -->
+    <script src="~/Scripts/AdminLTE/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <!-- bootstrap datepicker -->
+    <script src="~/Scripts/AdminLTE/plugins/datepicker/locales/bootstrap-datepicker.ar.js"></script>
+
+    <!-- bootstrap timepicker -->
+    <script src="~/Scripts/AdminLTE/plugins/timepicker/bootstrap-timepicker.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.select2').select2({
+                dir: "rtl"
+            });
+            //Date picker
+            $('.datepicker').datepicker({
+                autoclose: true,
+                language: 'ar',
+                format: 'dd/mm/yyyy',
+                calendarWeeks: false
+            });
+            //Timepicker
+            $(".timepicker").timepicker();
+        });
+    </script>
+}

@@ -1,0 +1,330 @@
+﻿
+@{
+    ViewBag.Title = "طلبية رقم 2564";
+    ViewBag.Breadcrumb = new Breadcrumb(new Crumb[] {
+        new Crumb("الصفحة الرئيسية", "", "fa-dashboard"),
+        new Crumb("الطلبيات", Url.Content("~/Requests"), ""),
+        new Crumb("طلبية #2564", "", "")
+    });
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- TABLE: LATEST ORDERS -->
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">طلبية منتج "حليب منكه فريز 200 مل"</h3>
+                <div class="pull-left">
+                    <span data-toggle="tooltip" title="الجميع">
+                        <a data-toggle="modal" data-target="#combination-modal" class="btn btn-sm btn-info btn-flat">تركيبة المنتج&nbsp;<i class="fa fa-gear"></i></a>
+                    </span>
+                    <span data-toggle="tooltip" title="ما عدا المالية ومدير الإنتاج في خطوة المباشرة بالطلبية">
+                        <a data-toggle="modal" data-target="#accept-confirm-modal" class="btn btn-sm btn-success btn-flat">موافقة&nbsp;<i class="fa fa-check"></i></a>
+                    </span>
+                    <span data-toggle="tooltip" title="ماعدا المالية">
+                        <a data-toggle="modal" data-target="#reject-confirm-modal" class="btn btn-sm btn-danger btn-flat">رفض&nbsp;<i class="fa fa-times"></i></a>
+                    </span>
+                    <span data-toggle="tooltip" title="مدير الإنتاج في خطوة المباشرة بالطلبية">
+                        <a data-toggle="modal" data-target="#start-confirm-modal" class="btn btn-sm btn-primary btn-flat">مباشرة الطلبية&nbsp;<i class="fa fa-mail-reply"></i></a>
+                    </span>
+                    <span data-toggle="tooltip" title="المالية عند تحديد سعر الصرف">
+                        <a data-toggle="modal" data-target="#currency-confirm-modal" class="btn btn-sm bg-purple btn-flat">تحديد سعر الصرف&nbsp;<i class="fa fa-money"></i></a>
+                    </span>
+                    <span data-toggle="tooltip" title="مدير الإنتاج عند إنهاء الطلبية">
+                        <a data-toggle="modal" data-target="#finish-confirm-modal" class="btn btn-sm bg-maroon btn-flat">إنهاء الطلبية&nbsp;<i class="fa fa-check"></i></a>
+                    </span>
+                </div>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="table table-hover no-margin table-bordered" id="products">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>القسم</th>
+                                <th>الحركة</th>
+                                <th>المستخدم</th>
+                                <th>التاريخ</th>
+                                <th>الحالة</th>
+                                <th>ملاحظات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>التسويق</td>
+                                <td>إضافة مسودة إلى الخطة</td>
+                                <td>محمد أحمد</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <span class="label label-success"><i class="fa fa-check"></i>&nbsp;مع الموافقة</span>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>الإدارة</td>
+                                <td>الموافقة على الطلبية</td>
+                                <td>محمد م</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <span class="label label-success"><i class="fa fa-check"></i>&nbsp;مع الموافقة</span>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>مدير الإنتاج</td>
+                                <td>البدء بالطلبية</td>
+                                <td>محمد منتج</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <span class="label label-warning"><i class="fa fa-clock-o"></i>&nbsp;قيد الانتظار</span>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>المالية</td>
+                                <td>تحديد سعر الصرف</td>
+                                <td>محمد م</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <span class="label label-success"><i class="fa fa-check"></i>&nbsp;مع الموافقة</span>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>مدير المستودع</td>
+                                <td>التحقق من توافر المواد</td>
+                                <td>محمد م</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <span class="label label-danger"><i class="fa fa-times"></i>&nbsp;تم الرفض</span>
+                                </td>
+                                <td>
+                                    لا يوجد مواد كافية
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>مدير المستودع</td>
+                                <td>تسليم المواد</td>
+                                <td>محمد م</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <span class="label label-danger"><i class="fa fa-times-circle-o"></i>&nbsp;ملغى</span>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>مدير الإنتاج</td>
+                                <td>استلام المواد</td>
+                                <td>محمد م</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <span class="label label-danger"><i class="fa fa-times-circle-o"></i>&nbsp;ملغى</span>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>مدير الإنتاج</td>
+                                <td>إنهاء الطلبية</td>
+                                <td>محمد م</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <span class="label label-danger"><i class="fa fa-times-circle-o"></i>&nbsp;ملغى</span>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!-- /.table-responsive -->
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix">
+
+            </div><!-- /.box-footer -->
+        </div><!-- /.box -->
+    </div><!-- /.col -->
+
+</div><!-- /.row -->
+
+<div class="modal fade modal-danger" tabindex="-1" role="dialog" id="reject-confirm-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">رسالة تأكيد</h4>
+            </div>
+            <div class="modal-body">
+                <textarea class="form-control" placeholder="أدخل سبب الرفض"></textarea>
+            </div>
+            <div class="modal-footer">
+                <p class="pull-right">هل أنت متأكد؟</p>
+                <button type="button" class="btn btn-outline" data-dismiss="modal">إغلاق</button>
+                <button type="button" class="btn btn-outline">نعم، متأكد</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade modal-success" tabindex="-1" role="dialog" id="accept-confirm-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">رسالة تأكيد</h4>
+            </div>
+            <div class="modal-body">
+                <textarea class="form-control" placeholder="أدخل ملاحظاتك"></textarea>
+            </div>
+            <div class="modal-footer">
+                <p class="pull-right">هل أنت متأكد؟</p>
+                <button type="button" class="btn btn-outline" data-dismiss="modal">إغلاق</button>
+                <button type="button" class="btn btn-outline">نعم، متأكد</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="combination-modal">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">تركيبة حليب منكه فريز 200 مل  </h4>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered no-margin" id="combination" data-toggle="table"
+                           data-show-print="true" data-show="true">
+                        <thead>
+                            <tr>
+                                <th>تصنيف المادة</th>
+                                <th>اسم المادة</th>
+                                <th>رمز المادة</th>
+                                <th>مجموعة المادة</th>
+                                <th>كمية الوصفة</th>
+                                <th>نسبة الهدر</th>
+                                <th>كمية الوصفة مع الهدر</th>
+                                <th>الوحدة</th>
+                                <th>الكلفة بالدولار</th>
+                                <th>كلفة الوصفة</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>سكر أبيض</td>
+                                <td>سكر أبيض</td>
+                                <td>108002</td>
+                                <td>مواد خام</td>
+                                <td>0.022000</td>
+                                <td>0.02</td>
+                                <td>0.022440</td>
+                                <td>KG</td>
+                                <td>0.69</td>
+                                <td>0.0154836000</td>
+
+                            </tr>
+                            <tr>
+                                <td>سكر أبيض</td>
+                                <td>سكر أبيض</td>
+                                <td>108002</td>
+                                <td>مواد خام</td>
+                                <td>0.022000</td>
+                                <td>0.02</td>
+                                <td>0.022440</td>
+                                <td>KG</td>
+                                <td>0.69</td>
+                                <td>0.0154836000</td>
+
+                            </tr>
+                            <tr>
+                                <td>سكر أبيض</td>
+                                <td>سكر أبيض</td>
+                                <td>108002</td>
+                                <td>مواد خام</td>
+                                <td>0.022000</td>
+                                <td>0.02</td>
+                                <td>0.022440</td>
+                                <td>KG</td>
+                                <td>0.69</td>
+                                <td>0.0154836000</td>
+
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                        <th colspan="8" style="text-align:left;">
+                            كلفة المنتج المعيارية
+                        </th>
+                        <th colspan="2">
+                            $0.127081 = 69.89455 ليرة سورية
+                        </th>
+                    </table>
+                </div><!-- /.table-responsive -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade modal-primary" tabindex="-1" role="dialog" id="start-confirm-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">رسالة تأكيد</h4>
+            </div>
+            <div class="modal-body">
+                <textarea class="form-control" placeholder="أدخل ملاحظاتك"></textarea>
+            </div>
+            <div class="modal-footer">
+                <p class="pull-right">هل أنت متأكد؟</p>
+                <button type="button" class="btn btn-outline" data-dismiss="modal">إغلاق</button>
+                <button type="button" class="btn btn-outline">نعم، متأكد</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade modal-primary" tabindex="-1" role="dialog" id="currency-confirm-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">رسالة تأكيد</h4>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" placeholder="أدخل سعر الصرف" />
+            </div>
+            <div class="modal-footer">
+                <p class="pull-right">هل أنت متأكد؟</p>
+                <button type="button" class="btn btn-outline" data-dismiss="modal">إغلاق</button>
+                <button type="button" class="btn btn-outline">نعم، متأكد</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade modal-primary" tabindex="-1" role="dialog" id="finish-confirm-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">رسالة تأكيد</h4>
+            </div>
+            
+            <div class="modal-footer">
+                <p class="pull-right">هل أنت متأكد؟</p>
+                <button type="button" class="btn btn-outline" data-dismiss="modal">إغلاق</button>
+                <a href="~/Requests/Close" class="btn btn-outline">نعم، متأكد</a>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

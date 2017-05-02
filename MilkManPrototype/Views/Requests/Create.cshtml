@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "إضافة طلبية جديدة";
+    ViewBag.Breadcrumb = new Breadcrumb(new Crumb[] {
+        new Crumb("الطلبيات", Url.Content("~/Requests"), ""),
+        new Crumb("إضافة طلبية", "", "")
+    });
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- TABLE: LATEST ORDERS -->
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">إضافة طلبية جديدة"</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <form action="@Url.Content("~/Requests?a=1")" method="post">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-3"> المنتج</label>
+                            <div class="col-md-6">
+                                <select id="item" class="form-control select2" data-placeholder="اختر المنتج">
+                                    <option>حليب منكه فريز 200 مل</option>
+                                    <option>حليب منكه فريز 1 ليتر</option>
+                                    <option>حليب كامل الدسم 1 ليتر</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3">تكلفة الوحدة المعيارية ($)</label>
+                            <div class="col-md-6">
+                                <input type="text" disabled id="item-unit-cost" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3">عدد الوحدات</label>
+                            <div class="col-md-6">
+                                <input type="text" id="item-amount" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3">التكلفة المعيارية الإجمالية($)</label>
+                            <div class="col-md-6">
+                                <input type="text" disabled id="cost" class="form-control" value="" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-3 col-md-6">
+                                <input type="submit" value="إضافة الطلبية" class="btn btn-success" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix">
+
+            </div><!-- /.box-footer -->
+        </div><!-- /.box -->
+    </div><!-- /.col -->
+
+</div><!-- /.row -->
+
+@section scripts {
+    <script src="~/Scripts/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.select2').select2({
+                dir: "rtl"
+            });
+            $('#item').change(function () {
+                $("#item-unit-cost").val('0.127334');
+            });
+            $('#item-amount').keyup(function () {
+                var amount = parseFloat($('#item-amount').val()).toFixed(4);
+                
+                var item_unit_cost = parseFloat($('#item-unit-cost').val()).toFixed(4);
+                var item_cost = (item_unit_cost * amount).toFixed(5);
+                $('#cost').val(item_cost);
+            });
+        });
+    </script>
+}

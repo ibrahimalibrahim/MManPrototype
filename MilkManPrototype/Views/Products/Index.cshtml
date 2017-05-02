@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "إدارة المنتجات";
+    ViewBag.Breadcrumb = new Breadcrumb(new Crumb[] {
+        new Crumb("الصفحة الرئيسية", "", "fa-dashboard"),
+        new Crumb("إدارة المنتجات", "", "")
+    });
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- TABLE: LATEST ORDERS -->
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">المنتجات</h3>
+            <div class="pull-left">
+                <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">إضافة منتج جديد&nbsp;<i class="fa fa-plus-circle"></i></a>
+                
+            </div>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="table table-hover no-margin" id="products">
+                        <thead>
+                            <tr>
+                                <th>المعرف</th>
+                                <th>المنتج</th>
+                                <th>مجموعة المنتج الجاهز</th>
+                                <th>تاريخ آخر تعديل</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#">9842</a></td>
+                                <td>حليب منكه فريز 200 مل</td>
+                                <td>حليب 200 مل</td>
+                                <td>14/04/2017</td>
+                                <td>
+                                    <a href="~/Requests/Product" class="btn btn-info btn-sm">الطلبيات&nbsp;<i class="fa fa-exchange"></i></a>
+                                    <a href="~/Combination" class="btn btn-success btn-sm">التركيبة&nbsp;<i class="fa fa-gear"></i></a>
+                                    <a href="~/Products/Details" class="btn btn-primary btn-sm">التفاصيل&nbsp;<i class="fa fa-eye"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!-- /.table-responsive -->
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix">
+                
+            </div><!-- /.box-footer -->
+        </div><!-- /.box -->
+    </div><!-- /.col -->
+
+</div><!-- /.row -->
+
+@section scripts {
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#products').DataTable({
+                "language": {
+                    "url": "@Url.Content("~/Scripts/DataTables/Arabic.json")"
+                }
+            });
+        });
+    </script>
+}

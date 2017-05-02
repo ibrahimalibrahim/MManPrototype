@@ -26,6 +26,8 @@ namespace MilkManPrototype
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/rtlcss").Include(
+                        "~/Content/AdminLTE/bootstrap-rtl.min.css"));
         }
     }
 }

@@ -1,0 +1,340 @@
+﻿
+@{
+    ViewBag.Title = "خطة 27/04/2017";
+    ViewBag.Breadcrumb = new Breadcrumb(new Crumb[] {
+        new Crumb("الصفحة الرئيسية", "", "fa-dashboard"),
+        new Crumb("الخطط", Url.Content("~/Requests/Plan"), ""),
+        new Crumb("خطة 27/04/2017")
+    });
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">خطة 27/04/2017</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>المعرف</th>
+                            <td>9842</td>
+                            <th>تاريخ الخطة</th>
+                            <td>27/04/2017</td>
+                        </tr>
+                        <tr>
+                            <th>تاريخ الإنشاء</th>
+                            <td>12/04/2017</td>
+                            <th>تاريخ آخر تعديل</th>
+                            <td>16/04/2017</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="5">عدد الطلبيات</th>
+                            <td rowspan="5">10</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span data-toggle="tooltip" title="الطلبيات التي أنهاها مدير الإنتاج">الطلبيات المنتهية</span>
+                            </th>
+                            <td>4</td>
+                        <tr>
+                            <th>
+                            <span data-toggle="tooltip" title="الطلبيات التي باشر بها مدير الإنتاج وهي في طور الإنتاج">الطلبيات المباشر بها</span>
+                            </th>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span data-toggle="tooltip" title="الطلبيات التي لم يوافق عليها مدير الإنتاج">الطلبيات المرفوضة</span>
+                            </th>
+                            
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span data-toggle="tooltip" title="الطلبيات التي لم يبت فيها مدير الإنتاج">الطلبيات قيد الانتظار</span>
+                            </th>
+                            
+                            <td>3</td>
+                        </tr>
+                    </table>
+
+                </div><!-- /.table-responsive -->
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix">
+
+            </div><!-- /.box-footer -->
+        </div><!-- /.box -->
+
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">الطلبيات</h3>
+                <div class="pull-left">
+                    <a href="/MilkManPrototype/Requests/Create" class="btn btn-sm btn-info btn-flat pull-left">إضافة طلبية جديدة&nbsp;<i class="fa fa-plus-circle"></i></a>
+                </div>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered no-margin" id="archived-requests">
+                        <thead>
+                            <tr>
+                                <th>الرمز</th>
+                                <th>المنتج</th>
+                                <th>عدد الوحدات</th>
+                                <th>الكلفة المعيارية ($) </th>
+                                <th>تاريخ الإنشاء</th>
+                                <th>تاريخ آخر تعديل</th>
+                                <th>الحالة</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>27893</td>
+                                <th>
+                                    <a href="~/Products/Details">
+                                        حليب منكه فريز 200 مل
+                                    </a>
+                                </th>
+                                <td>200</td>
+                                <td>25.4216</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>@DateTime.Now.AddDays(-1).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <small class="label label-default">مسودة</small>
+                                </td>
+                                <td>
+                                    <span data-toggle="tooltip" title="تركيبة المنتج بالطلبية">
+                                        <a class="btn btn-xs btn-info" data-target="#combination-modal" data-toggle="modal"><i class="fa fa-gear"></i></a>
+                                    </span>
+                                    <span data-toggle="tooltip" title="تفاصيل الطلبية">
+                                        <a class="btn btn-xs btn-success" href="~/Requests/Details"><i class="fa fa-eye"></i></a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>27952</td>
+                                <th>
+                                    <a href="~/Products/Details">
+                                        حليب منكه فريز 200 مل
+                                    </a>
+                                </th>
+                                <td>500</td>
+                                <td>63.554</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>@DateTime.Now.AddDays(-1).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <small class="label label-info">وافقت عليها الإدارة</small>
+                                </td>
+                                <td>
+                                    <span data-toggle="tooltip" title="تركيبة المنتج بالطلبية">
+                                        <a class="btn btn-xs btn-info" data-target="#combination-modal" data-toggle="modal"><i class="fa fa-gear"></i></a>
+                                    </span>
+                                    <span data-toggle="tooltip" title="تفاصيل الطلبية">
+                                        <a class="btn btn-xs btn-success" href="~/Requests/Details"><i class="fa fa-eye"></i></a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>27952</td>
+                                <th>
+                                    <a href="~/Products/Details">
+                                        حليب منكه فريز 200 مل
+                                    </a>
+                                </th>
+                                <td>500</td>
+                                <td>63.554</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>@DateTime.Now.AddDays(-1).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <small class="label label-danger">مرفوضة من مدير الإنتاج</small>
+                                </td>
+                                <td>
+                                    <span data-toggle="tooltip" title="تركيبة المنتج بالطلبية">
+                                        <a class="btn btn-xs btn-info" data-target="#combination-modal" data-toggle="modal"><i class="fa fa-gear"></i></a>
+                                    </span>
+                                    <span data-toggle="tooltip" title="تفاصيل الطلبية">
+                                        <a class="btn btn-xs btn-success" href="~/Requests/Details"><i class="fa fa-eye"></i></a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>27893</td>
+                                <th>
+                                    <a href="~/Products/Details">
+                                        حليب منكه فريز 200 مل
+                                    </a>
+                                </th>
+                                <td>200</td>
+                                <td>25.4216</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>@DateTime.Now.AddDays(-1).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <small class="label label-warning">قيد العمل</small>
+                                </td>
+                                <td>
+                                    <span data-toggle="tooltip" title="تركيبة المنتج بالطلبية">
+                                        <a class="btn btn-xs btn-info" data-target="#combination-modal" data-toggle="modal"><i class="fa fa-gear"></i></a>
+                                    </span>
+                                    <span data-toggle="tooltip" title="تفاصيل الطلبية">
+                                        <a class="btn btn-xs btn-success" href="~/Requests/Details"><i class="fa fa-eye"></i></a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>27893</td>
+                                <th>
+                                    <a href="~/Products/Details">
+                                        حليب منكه فريز 200 مل
+                                    </a>
+                                </th>
+                                <td>200</td>
+                                <td>25.4216</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>@DateTime.Now.AddDays(-1).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <small class="label label-success">منتهية</small>
+                                </td>
+                                <td>
+                                    <span data-toggle="tooltip" title="تركيبة المنتج بالطلبية">
+                                        <a class="btn btn-xs btn-info" data-target="#combination-modal" data-toggle="modal"><i class="fa fa-gear"></i></a>
+                                    </span>
+                                    <span data-toggle="tooltip" title="تفاصيل الطلبية">
+                                        <a class="btn btn-xs btn-success" href="~/Requests/Details"><i class="fa fa-eye"></i></a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>27893</td>
+                                <th>
+                                    <a href="~/Products/Details">
+                                        حليب منكه فريز 200 مل
+                                    </a>
+                                </th>
+                                <td>200</td>
+                                <td>25.4216</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>@DateTime.Now.AddDays(-1).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <small class="label label-danger">مرفوضة من الإدارة</small>
+                                </td>
+                                <td>
+                                    <span data-toggle="tooltip" title="تركيبة المنتج بالطلبية">
+                                        <a class="btn btn-xs btn-info" data-target="#combination-modal" data-toggle="modal"><i class="fa fa-gear"></i></a>
+                                    </span>
+                                    <span data-toggle="tooltip" title="تفاصيل الطلبية">
+                                        <a class="btn btn-xs btn-success" href="~/Requests/Details"><i class="fa fa-eye"></i></a>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!-- /.table-responsive -->
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix">
+
+            </div><!-- /.box-footer -->
+        </div><!-- /.box -->
+    </div><!-- /.col -->
+
+</div><!-- /.row -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="combination-modal">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">تركيبة حليب منكه فريز 200 مل  </h4>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered no-margin" id="combination" data-toggle="table"
+                           data-show-print="true" data-show="true">
+                        <thead>
+                            <tr>
+                                <th>تصنيف المادة</th>
+                                <th>اسم المادة</th>
+                                <th>رمز المادة</th>
+                                <th>مجموعة المادة</th>
+                                <th>كمية الوصفة</th>
+                                <th>نسبة الهدر</th>
+                                <th>كمية الوصفة مع الهدر</th>
+                                <th>الوحدة</th>
+                                <th>الكلفة بالدولار</th>
+                                <th>كلفة الوصفة</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>سكر أبيض</td>
+                                <td>سكر أبيض</td>
+                                <td>108002</td>
+                                <td>مواد خام</td>
+                                <td>0.022000</td>
+                                <td>0.02</td>
+                                <td>0.022440</td>
+                                <td>KG</td>
+                                <td>0.69</td>
+                                <td>0.0154836000</td>
+
+                            </tr>
+                            <tr>
+                                <td>سكر أبيض</td>
+                                <td>سكر أبيض</td>
+                                <td>108002</td>
+                                <td>مواد خام</td>
+                                <td>0.022000</td>
+                                <td>0.02</td>
+                                <td>0.022440</td>
+                                <td>KG</td>
+                                <td>0.69</td>
+                                <td>0.0154836000</td>
+
+                            </tr>
+                            <tr>
+                                <td>سكر أبيض</td>
+                                <td>سكر أبيض</td>
+                                <td>108002</td>
+                                <td>مواد خام</td>
+                                <td>0.022000</td>
+                                <td>0.02</td>
+                                <td>0.022440</td>
+                                <td>KG</td>
+                                <td>0.69</td>
+                                <td>0.0154836000</td>
+
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                        <th colspan="8" style="text-align:left;">
+                            كلفة المنتج المعيارية
+                        </th>
+                        <th colspan="2">
+                            $0.127081 = 69.89455 ليرة سورية
+                        </th>
+                    </table>
+                </div><!-- /.table-responsive -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+@section scripts {
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#archived-requests').DataTable({
+                "language": {
+                    "url": "@Url.Content("~/Scripts/DataTables/Arabic.json")"
+                }
+            });
+        });
+    </script>
+}

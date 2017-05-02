@@ -1,0 +1,176 @@
+﻿
+@{
+    ViewBag.Title = "إضافة مادة إلى تركيبة";
+    ViewBag.Breadcrumb = new Breadcrumb(new Crumb[] {
+        new Crumb("الصفحة الرئيسية", "", "fa-dashboard"),
+        new Crumb("حليب منكه فريز 200 مل", Url.Content("~/Products"), ""),
+        new Crumb("التركيبة", Url.Content("~/Combination"), ""),
+        new Crumb("إضافة مادة", "", "")
+    });
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- TABLE: LATEST ORDERS -->
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">إضافة مادة جديدة إلى تركيبة "حليب منكه فريز 200 مل"</h3>
+
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <form action="@Url.Content("~/Combination?a=1")" method="post">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-3">اختر تصنيف المادة</label>
+                            <div class="col-md-6">
+                                <select id="item-category" class="form-control select2" data-placeholder="تصنيف المادة">
+                                    <option>اختر تصنيف</option>
+                                    <option>سكر أبيض</option>
+                                    <option>منكهات</option>
+                                    <option>حليب مجفف كامل الدسم</option>
+                                    <option>زبدة حيواني</option>
+                                    <option>مثبتات حليب منكه</option>
+                                    <option>ملونات</option>
+                                    <option>مياه</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-3">اختر المادة</label>
+                            <div class="col-md-6">
+                                <select id="item-name" class="form-control select2" disabled data-placeholder="تصنيف المادة">
+                                    <option>اختر المادة</option>
+                                    <option>سكر أبيض</option>
+                                    <option>منكه فريز رقم str/c-101.130</option>
+                                    <option>حليب بودرة كامل الدسم</option>
+                                    <option>زبدة حيواني</option>
+                                    <option>ريكودان CM VEG</option>
+                                    <option>ملون أحمر E124</option>
+                                    <option>مياه</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="item-features" style="display: none;">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-3">رمز المادة</label>
+                                <div class="col-md-6">
+                                    <input type="text" disabled id="" class="form-control" value="108002" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-3">مجموعة المادة</label>
+                                <div class="col-md-6">
+                                    <input type="text" disabled class="form-control" value="مواد خام" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-3">كمية الوصفة</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="item-amount" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-3">نسبة الهدر</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="item-waste-percentage" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-3">كمية الوصفة مع الهدر</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="item-amount-with-waste" disabled class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-3">الوحدة</label>
+                                <div class="col-md-6">
+                                    <input type="text" disabled class="form-control" value="KG" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-3">التكلفة بالدولار</label>
+                                <div class="col-md-6">
+                                    <input type="text" disabled class="form-control" value="0.69" id="item-unit-cost" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-3">كلفة المادة ضمن الوصفة بالدولار</label>
+                                <div class="col-md-6">
+                                    <input type="text" disabled class="form-control" id="item-cost" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-3">كلفة المادة ضمن الوصفة بالليرة</label>
+                                <div class="col-md-6">
+                                    <input type="text" disabled class="form-control" id="item-cost-sp" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-md-offset-3 col-md-6">
+                                    <input type="submit" value="إضافة المادة" class="btn btn-success" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix">
+
+            </div><!-- /.box-footer -->
+        </div><!-- /.box -->
+    </div><!-- /.col -->
+
+</div><!-- /.row -->
+
+@section scripts {
+    <script src="~/Scripts/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.select2').select2({
+                dir: "rtl"
+            });
+            $('#item-category').change(function () {
+                $("#item-name").prop("disabled", false);
+            });
+            $('#item-name').change(function () {
+                $("#item-features").show();
+            });
+            $('#item-amount, #item-waste-percentage').keyup(function () {
+                var amount = parseFloat($('#item-amount').val()).toFixed(4);
+                var waste = parseFloat($('#item-waste-percentage').val()).toFixed(4);
+
+                var amount_with_waste = ((+1 + +waste) * amount).toFixed(6);
+                $('#item-amount-with-waste').val(amount_with_waste);
+
+                var item_unit_cost = parseFloat($('#item-unit-cost').val()).toFixed(4);
+                var item_cost = (item_unit_cost * amount_with_waste).toFixed(10);
+
+                var item_cost_sp = item_cost * 550;
+                $('#item-cost').val(item_cost);
+                $('#item-cost-sp').val(item_cost_sp);
+            });
+        });
+    </script>
+}

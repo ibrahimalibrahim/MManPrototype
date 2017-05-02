@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "تركيبة حليب منكه فريز 200 مل";
+    ViewBag.Breadcrumb = new Breadcrumb(new Crumb[] {
+        new Crumb("الصفحة الرئيسية", "", "fa-dashboard"),
+        new Crumb("حليب منكه فريز 200 مل", Url.Content("~/Products"), ""),
+        new Crumb("التركيبة", "", "")
+    });
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- TABLE: LATEST ORDERS -->
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">تركيبة حليب منكه فريز 200 مل</h3>
+                <div class="pull-left">
+                    <a href="@Url.Content("~/Combination/AddItem")" class="btn btn-sm btn-info btn-flat pull-left">إضافة مادة جديدة&nbsp;<i class="fa fa-plus-circle"></i></a>
+                </div>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered no-margin" id="combination" data-toggle="table"
+                           data-show-print="true" data-show="true">
+                        <thead>
+                            <tr>
+                                <th>تصنيف المادة</th>
+                                <th>اسم المادة</th>
+                                <th>رمز المادة</th>
+                                <th>مجموعة المادة</th>
+                                <th>كمية الوصفة</th>
+                                <th>نسبة الهدر</th>
+                                <th>كمية الوصفة مع الهدر</th>
+                                <th>الوحدة</th>
+                                <th>الكلفة بالدولار</th>
+                                <th>كلفة الوصفة ($)</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>سكر أبيض</td>
+                                <td>سكر أبيض</td>
+                                <td>108002</td>
+                                <td>مواد خام</td>
+                                <td>0.022000</td>
+                                <td>0.02</td>
+                                <td>0.022440</td>
+                                <td>KG</td>
+                                <td>0.69</td>
+                                <td>0.0154836000</td>
+                                <td>
+                                    <a href="#" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
+                                    <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>سكر أبيض</td>
+                                <td>سكر أبيض</td>
+                                <td>108002</td>
+                                <td>مواد خام</td>
+                                <td>0.022000</td>
+                                <td>0.02</td>
+                                <td>0.022440</td>
+                                <td>KG</td>
+                                <td>0.69</td>
+                                <td>0.0154836000</td>
+                                <td>
+                                    <a href="#" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
+                                    <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>سكر أبيض</td>
+                                <td>سكر أبيض</td>
+                                <td>108002</td>
+                                <td>مواد خام</td>
+                                <td>0.022000</td>
+                                <td>0.02</td>
+                                <td>0.022440</td>
+                                <td>KG</td>
+                                <td>0.69</td>
+                                <td>0.0154836000</td>
+                                <td>
+                                    <a href="#" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
+                                    <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                        <th colspan="8" style="text-align:left;">
+                            كلفة المنتج المعيارية
+                        </th>
+                        <th colspan="2">
+                            $0.127081 = 69.89455 ليرة سورية
+                        </th>
+                        <th></th>
+                        </tfoot>
+                    </table>
+                </div><!-- /.table-responsive -->
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix">
+
+            </div><!-- /.box-footer -->
+        </div><!-- /.box -->
+    </div><!-- /.col -->
+
+</div><!-- /.row -->
+
+@section scripts {
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.buttons.min.js"></script>
+    <script src="~/Scripts/DataTables/buttons.print.min.js"></script>
+
+    <script src="~/Content/bootstrap-table.js"></script>
+    <script src="~/Content/bootstrap-table-print.js"></script>
+
+
+
+    @*<script>
+            $(document).ready(function () {
+                $('#combination').DataTable({
+                    "language": {
+                        "url": "@Url.Content("~/Scripts/DataTables/Arabic.json")"
+                    },
+                    dom: 'B<"clear">lfrtip',
+                    buttons: ['print']
+                });
+            });
+        </script>*@
+}

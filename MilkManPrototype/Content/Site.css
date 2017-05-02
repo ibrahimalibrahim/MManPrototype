@@ -1,7 +1,4 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
+﻿
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -18,7 +15,60 @@
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
-select,
-textarea {
+select
+ {
     max-width: 280px;
+}
+
+
+div.dataTables_wrapper div.dataTables_filter, div.dataTables_wrapper div.dataTables_paginate {
+    float: left;
+}
+
+#combination th {
+    font-weight: 100 !important;
+    background: #d2d8e0;
+}
+
+#combination tfoot th {
+    font-weight: bold !important;
+}
+
+#combination td {
+    padding-bottom: 0px;
+    padding-right: 2px;
+    padding-top: 3px;
+    font-size: 12px;
+}
+
+
+.alert {
+    padding: 7px;
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
+.alert span {
+    margin-right: 28px;
+}
+
+.table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > th, .table > caption + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > td, .table > thead:first-child > tr:first-child > td {
+    border-top: 1px #bbc4d0 solid;
+}
+
+
+.alert .icon {
+    margin-right: 0px !important;
+    margin-left: 10px;
+}
+
+.flowchart-example-container {
+    height: 400px;
+        border: 1px solid #BBB;
+    margin-bottom: 10px;
+}
+
+
+.dropdown-menu {
+    left: 0;
+    right: auto !important;
 }

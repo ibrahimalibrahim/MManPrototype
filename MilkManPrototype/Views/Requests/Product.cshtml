@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = "طلبيات حليب منكه فريز 200 مل";
+    ViewBag.Breadcrumb = new Breadcrumb(new Crumb[] {
+        new Crumb("الصفحة الرئيسية", "", "fa-dashboard"),
+        new Crumb("حليب منكه فريز 200 مل", Url.Content("~/Products"), ""),
+        new Crumb("الطلبيات", "", "")
+    });
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- TABLE: LATEST ORDERS -->
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">طلبيات حليب منكه فريز 200 مل</h3>
+                <div class="pull-left">
+                    <a href="@Url.Content("~/Requests/Create")" class="btn btn-sm btn-info btn-flat pull-left">إضافة طلبية جديدة&nbsp;<i class="fa fa-plus-circle"></i></a>
+                </div>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered no-margin" id="requests">
+                        <thead>
+                            <tr>
+                                <th>الرمز</th>
+                                <th>عدد الوحدات</th>
+                                <th>الكلفة المعيارية ($) </th>
+                                <th>تاريخ الإنشاء</th>
+                                <th>تاريخ آخر تعديل</th>
+                                <th>مدير الورشة</th>
+                                <th>طلب المواد</th>
+                                <th>المدير</th>
+                                <th>تصدير من المستودع</th>
+                                <th>استلام المواد</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>27893</td>
+                                <td>200</td>
+                                <td>25.4216</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>@DateTime.Now.AddDays(-1).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <small class="label label-success" data-toggle="tooltip" title="@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")">تم</small>
+                                </td>
+                                <td>
+                                    <small class="label label-success" data-toggle="tooltip" title="@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")">تم</small>
+                                </td>
+                                <td>
+                                    <small class="label label-success" data-toggle="tooltip" title="@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")">تم</small>
+                                </td>
+                                <td>
+                                    <small class="label label-success" data-toggle="tooltip" title="@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")">تم</small>
+                                </td>
+                                <td>
+                                    <small class="label label-success" data-toggle="tooltip" title="@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")">تم</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>27952</td>
+                                <td>500</td>
+                                <td>63.554</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>@DateTime.Now.AddDays(-1).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <small class="label label-success" data-toggle="tooltip" title="@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")">تم</small>
+                                </td>
+                                <td>
+                                    <small class="label label-success" data-toggle="tooltip" title="@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")">تم</small>
+                                </td>
+                                <td>
+                                    <small class="label label-danger" data-toggle="tooltip" title="@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm") لا يوجد اعتماد">مع الرفض</small>
+                                </td>
+                                <td>
+                                    <small class="label label-danger">ملغى</small>
+                                </td>
+                                <td>
+                                    <small class="label label-danger">ملغى</small>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>27893</td>
+                                <td>200</td>
+                                <td>25.4216</td>
+                                <td>@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>@DateTime.Now.AddDays(-1).ToString("dd-MM-yyyy HH:mm")</td>
+                                <td>
+                                    <small class="label label-success" data-toggle="tooltip" title="@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")">تم</small>
+                                </td>
+                                <td>
+                                    <small class="label label-success" data-toggle="tooltip" title="@DateTime.Now.AddDays(-3).ToString("dd-MM-yyyy HH:mm")">تم</small>
+                                </td>
+                                <td>
+                                    <small class="label label-warning">قيد الانتظار</small>
+                                </td>
+                                <td>
+                                    <small class="label label-warning">قيد الانتظار</small>
+                                </td>
+                                <td>
+                                    <small class="label label-warning">قيد الانتظار</small>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!-- /.table-responsive -->
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix">
+
+            </div><!-- /.box-footer -->
+        </div><!-- /.box -->
+    </div><!-- /.col -->
+
+</div><!-- /.row -->
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('#combination').DataTable({
+                "language": {
+                    "url": "@Url.Content("~/Scripts/DataTables/Arabic.json")"
+                }
+            });
+        });
+    </script>
+}
